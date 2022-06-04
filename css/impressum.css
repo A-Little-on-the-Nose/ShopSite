@@ -1,0 +1,35 @@
+
+.impressum-main {
+    background-color: white;
+    padding: 1rem;
+
+}
+
+.datenschutz-main {
+    background-color: white;
+    padding: 1rem;
+}
+
+.datenschutz-main a {
+    text-decoration: underline;
+    color: blue;
+}
+
+@media screen and (min-width: 600px) {
+
+    .impressum-main {
+        padding: 1rem;
+        padding-bottom: 2rem;
+        margin: 0 6rem;
+        border-radius: 15px;
+    }
+
+    .datenschutz-main {
+        padding: 1rem;
+        margin: 0 6rem;
+        border-radius: 15px;
+    }
+}
+
+
+

@@ -1,0 +1,140 @@
+
+.section-suits {
+    display: flow-root;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    background-color: rgb(255, 255, 255);
+    
+}
+
+.section-suits h2 {
+    text-decoration: underline;
+}
+
+.section-suits a {
+    color: rgb(94, 131, 231);
+    font-size: 80%;
+
+}
+
+.section-suits a::after {
+    color: rgb(94, 131, 231);
+    font-size: 80%;
+
+}
+
+.suit-section-img img {
+    display: block;
+    max-width: 300px;
+    border-radius: 15px;
+    margin: 0 auto /* Zentriert das Bild */
+}
+
+.section-watches {
+    display: flow-root;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    background-color:  rgb(81, 81, 81);
+}
+
+.section-watches h2 {
+    text-decoration: underline;
+    color: white;
+}
+
+.section-watches a {
+    color: rgb(94, 131, 231);
+    font-size: 80%;
+
+}
+
+.section-watches a::after {
+    color: rgb(94, 131, 231); ;
+}
+    
+.watch-section-img img {
+    display: block;
+    max-width: 300px;
+    border-radius: 15px;
+    margin: 0 auto /* Zentriert das Bild */
+}
+
+
+
+
+@media screen and (max-width: 400px) {
+
+    .suit-section-img, .watch-section-img {
+       margin-left: 5.6%;
+    }
+  
+}
+
+/* Hier ist der media query für Ipads */
+
+@media screen and (min-width: 720px) {
+    .section-suits {
+        margin: 0rem 6rem;
+        border-radius: 15px;
+        font-size: 180%;
+    }
+
+    .suit-section-img img {
+        display: block;
+        max-width: 400px;
+    }
+
+    .section-watches {
+        margin: 0rem 6rem;
+        border-radius: 15px;
+        font-size: 180%;
+    }
+    .watch-section-img img {
+        display: block;
+        margin-top: 30px;
+        width: auto;
+        max-width: 400px;
+       
+    }
+}
+
+/* Hier ist der media query für Browserfenster */
+
+@media screen and (min-width: 900px) {
+
+    .section-suits {
+        margin: 0rem 6rem;
+        border-radius: 15px;
+        font-size: 180%;
+    }
+
+    .suit-section-img img {
+        display: flex;
+        float: right;
+        max-width: 400px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+
+
+    .section-watches {
+        margin: 0rem 6rem;
+        border-radius: 15px;
+        text-align: right;
+        font-size: 180%;
+    }
+    .watch-section-img img {
+        display: flex;
+        margin-top: 75px;
+        margin-bottom: 150px;
+        max-width: 450px;
+        float: left;
+       
+    }
+
+}
+
+
+
+

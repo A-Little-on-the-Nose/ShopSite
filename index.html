@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Homepage</title>
+    <meta content="What is Tie it up">
+
+    <script>
+
+        function dropit(){
+            this.classList.toggle('showmenu');
+        }
+
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="title">Tie it up!</h1>
+    </header>
+    
+    <nav class="nav-main">
+        <button  class="menubtn" name="menubtn" id="menubtn">Menu</button>
+        
+        <script>
+            let button= document.getElementById("menubtn");
+            button.addEventListener("click",dropit);
+        </script>
+
+            <ul id="droplist">
+                <li class="current"><a href="index.html">Home</a></li>
+                <li><a href="shop-site.html">Catalog</a></li>
+            </ul>
+    </nav>
+
+    <main class="homepage-main">
+        <section class="section-suits">
+            <figure class="suit-section-img">
+               <a href="https://www.bestmenswear.com/images/Content/suits/suit4-400x601.jpg" target="_blank" ><img src="img/suitsection.png"alt="Man in a Suit"></a>
+            </figure>
+
+            <h2>Suits for every occasion:</h2>
+            <p>Since leaving a good a first impression is one of the most important part of every social interaction, we want to provoide you
+                with products of best quality. To keep up our end of the bargain we are in close interaction with the most skilled tailors and 
+                infamous designers world-wide.<br>
+                Your suit will be tailored according to your exact measurements to garuntee a comfortable fit that will leave you feeling confident
+                even in a formal dress code.<br>
+                Didn't find a suit-design that you liked? No problem! In those rare cases we offer you to be able to customize your own design and we will 
+                try our best to make this suit your suit!<br>
+                Interested? Then go and check out the store!<br>
+                <a href="shop-site.html">Browse...</a>
+            </p>
+
+        </section>
+
+        <section class="section-watches">
+            <figure class="watch-section-img">
+                <a href="https://qph.fs.quoracdn.net/main-qimg-c11d820ef6c427aa776451d87a0c9055-lq" target="_blank"><img src="img/mens-watches.png" alt="Picture of Watch" id="watchimg"></a>
+            </figure>
+
+            <h2>Because time is everything:</h2>
+            <p>Being on time is already is skill that requires not just good organisational skills but also a perfectly working time piece.
+                It won't just work for telling the time but it will also work for making you look fashionable and who doesn't want that?<br>
+                In our shop we offer you the most refined watches for a reasonable price.<br> All pieces will be checked by one of our watchmakers to ensure that
+                your product is in tact and working till the end of time.<br>
+                Interested? Then go and check out the store!<br>
+                <a href="shop-site.html">Browse...</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="impressum.html">Impressum/ Imprint</a></li>
+                <li><a href="datenschutz.html">Datenschutz/ Privacy Policy </a></li>
+            </ul>
+        </nav>
+        <div class="filler"></div>
+    </footer>
+</body>
+</html>

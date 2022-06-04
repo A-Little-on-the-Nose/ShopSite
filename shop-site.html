@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Catalog</title>
+    <meta content="Here you can buy stuff">
+
+    <script>
+
+        function dropit() {
+            this.classList.toggle('showmenu');
+        }
+
+        function additemsfilter() {
+            if(event.target.nodeName=="LI" && (event.target.parentElement.id=="items-list" || event.target.parentElement.id=="colors-list")) {
+                event.target.classList.add("applied");
+                const ul=document.getElementById('filter-list');
+                ul.appendChild(event.target);
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="title">Tie it up!</h1>
+    </header>
+    
+    <nav class="nav-main">
+        <button  class="menubtn" name="menubtn" id="menubtn">Menu</button>
+        
+        <script>
+            let button= document.getElementById("menubtn");
+            button.addEventListener("click",dropit);
+        </script>
+
+            <ul id="droplist">
+                <li><a href="index.html">Home</a></li>
+                <li class="current"><a href="shop-site.html">Catalog</a></li>
+            </ul>
+    </nav>
+
+    <main class="catalog-main">
+        <aside class="filter-sidebar">
+
+            <fieldset>
+                <div class="filtered" id="filtered">
+                    <legend>Filter</legend>
+                    <ul id="filter-list">
+
+                    </ul>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="filter-items" id="filter-items">
+
+                    <legend>Items</legend>
+                    <ul id="items-list" name="items-list">
+                        <li id="i1">Suits</li>
+                        <li id="i2">Watches</li>
+                    </ul>
+                </div>
+
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="filter-color">
+                    <legend>Color</legend>
+                    <ul id="colors-list">
+                        <li><label for="color-red">Red</label></li>
+                        <li><label for="color-blue">Blue</label></li>
+                    </ul>
+                </div>
+            </fieldset>
+
+            <script>
+                document.addEventListener('click',additemsfilter);
+
+            </script>
+        </aside>
+
+        <div class="shop-grid">
+            <div class="search-result" id="search-result">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="impressum.html">Impressum/ Imprint</a></li>
+                <li><a href="datenschutz.html">Datenschutz/ Privacy Policy </a></li>
+            </ul>
+        </nav>
+        <div class="filler"></div>
+    </footer>
+</body>
+</html>

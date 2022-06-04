@@ -1,0 +1,46 @@
+.catalog-main{ display: flow-root; }
+
+.filter-sidebar {
+    background-color: white;
+    float: left;
+    margin-bottom: 10px;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.filter-sidebar ul {
+    list-style: none;
+    padding-left: 0;
+    padding-top: 5px;
+}
+
+.filter-sidebar li {
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 1px;
+
+    padding-left: 5px;
+    padding-right: 10px;
+    margin-bottom: 2px;
+}
+
+.filter-sidebar li:hover {
+    background-color: rgb(157, 247, 247);
+}
+
+.filter-sidebar legend {
+    text-decoration: underline;
+}
+
+.shop-grid {
+    background-color: gray;
+    margin-left: 7rem;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.shop-grid ul {
+    list-style: none;
+}
+
+

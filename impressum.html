@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Impressum</title>
+    <meta content="Impressum">
+
+    <script>
+
+        function dropit(){
+            this.classList.toggle('showmenu');
+        }
+
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="title">Tie it up!</h1>
+    </header>
+    
+    <nav class="nav-main">
+        <button  class="menubtn" name="menubtn" id="menubtn">Menu</button>
+        
+        <script>
+            let button= document.getElementById("menubtn");
+            button.addEventListener("click",dropit);
+        </script>
+
+            <ul id="droplist">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop-site.html">Catalog</a></li>
+            </ul>
+    </nav>
+
+    <main class="impressum-main">
+        <section>
+            <h2>Contact</h2>
+            <h3>Seiteninhaber</h3>
+            <p>Paul Paulson</p>
+
+            <p><br></br></p>
+
+            <h3>About the Company</h3>
+            <p>TieItUp GmbH</p>
+            <p>Gibtsnichtstr. 66</p>
+            <p>Narnia 6666</p>
+
+            <p><br></br></p>
+
+            <h3>About this Site</h3>
+            <p>This site is not a real shopping-site. Every information on here is fake and only serves the purpose of completeness. </p>
+            <p>All items listed here are fake as well.</p>
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="impressum.html">Impressum/ Imprint</a></li>
+                <li><a href="datenschutz.html">Datenschutz/ Privacy Policy </a></li>
+            </ul>
+        </nav>
+        <div class="filler"></div>
+    </footer>
+</body>
+</html>
