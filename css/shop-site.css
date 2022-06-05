@@ -1,5 +1,7 @@
 .catalog-main{ display: flow-root; }
 
+/*Hier sind die Einstellungen zu der Sidebar */
+
 .filter-sidebar {
     background-color: white;
     float: left;
@@ -32,6 +34,24 @@
     text-decoration: underline;
 }
 
+
+/* Hier sind die Einstellungen für den Color-filter zu finden */
+
+.filter-color li {
+    border-style: none;
+}
+
+.filter-color img {
+    border-style: solid;
+    border-radius: 30px;
+
+    max-width: 30px;
+}
+
+
+
+/* Hier sind die Einstellungen zum Shopfeld */
+
 .shop-grid {
     background-color: gray;
     margin-left: 7rem;
@@ -41,6 +61,15 @@
 
 .shop-grid ul {
     list-style: none;
+}
+
+.shop-grid li {
+    display: inline;
+    
+}
+
+.shop-grid img {
+    max-height: 300px;
 }
 
 
