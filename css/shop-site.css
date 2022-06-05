@@ -55,20 +55,25 @@
 .shop-grid {
     background-color: gray;
     margin-left: 7rem;
+    margin-right: 5rem;
     padding: 2rem;
     border-radius: 8px;
 }
 
 .shop-grid ul {
     list-style: none;
+   
 }
 
 .shop-grid li {
-    display: inline;
+    display: inline-block;
+    margin-left: 40px ;
     
 }
 
 .shop-grid img {
+    border-radius: 9px;
+
     max-height: 300px;
 }
 
