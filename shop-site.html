@@ -18,6 +18,10 @@
                 event.target.classList.add("applied");
                 const ul=document.getElementById('filter-list');
                 ul.appendChild(event.target);
+            } else if(event.target.nodeName=="IMG" && (event.target.parentElement.id=="items-list" || event.target.parentElement.id=="colors-list")) {
+                const li=document.createElement("li");
+                const ul=document.getElementById('filter-list');
+                
             }
         }
     </script>
@@ -46,7 +50,7 @@
 
             <fieldset>
                 <div class="filtered" id="filtered">
-                    
+
                     <legend>Filter</legend>
                     <ul id="filter-list">
 
