@@ -1,6 +1,13 @@
+/** WAS HIER ZU FINDEN IST IN DER DATEI shop-site.css:
+    1. Sidebar Einstellungen
+    2. Color-Filter Einstellungen
+    3. Akitve Filter Einstellungen
+    4. ShopFeld
+**/
+
 .catalog-main{ display: flow-root; }
 
-/*Hier sind die Einstellungen zu der Sidebar */
+/* 1) Sidebar */
 
 .filter-sidebar {
     background-color: white;
@@ -30,12 +37,22 @@
     background-color: rgb(157, 247, 247);
 }
 
+.filter-sidebar fieldset {
+    padding: 0;
+    border-radius: 5px;
+}
+
 .filter-sidebar legend {
-    text-decoration: underline;
+    color: white;
+    background-color: rgb(6, 0, 90);
+    padding-right: 2rem;
+    padding-left: 2rem;
+
+    border-radius: 2px;
 }
 
 
-/* Hier sind die Einstellungen für den Color-filter zu finden */
+/* 2) Color-filter */
 
 .filter-color li {
     border-style: none;
@@ -45,12 +62,27 @@
     border-style: solid;
     border-radius: 30px;
 
+    
     max-width: 30px;
 }
 
 
+/* 3) Aktive Filter */
 
-/* Hier sind die Einstellungen zum Shopfeld */
+    .filtered img {
+        border-style: solid;
+        border-radius: 30px;
+
+        max-width: 30px;
+    }
+
+    .filtered li {
+        border-style: none !important;
+        text-align: right;
+        padding-left: 20px;
+    }
+
+/* 4) Shopfeld */
 
 .shop-grid {
     background-color: gray;
