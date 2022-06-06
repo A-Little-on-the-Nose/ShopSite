@@ -7,23 +7,29 @@
     <title>Catalog</title>
     <meta content="Here you can buy stuff">
 
+    <script src="jQuery/jquery-3.6.0.js" type="text/javascript"></script>
     <script>
-
         function dropit() {
             this.classList.toggle('showmenu');
         }
 
         function additemsfilter() {
+
             if(event.target.nodeName=="LI" && (event.target.parentElement.id=="items-list" || event.target.parentElement.id=="colors-list")) {
                 event.target.classList.add("applied");
                 const ul=document.getElementById('filter-list');
                 ul.appendChild(event.target);
-            } else if(event.target.nodeName=="IMG" && (event.target.parentElement.id=="items-list" || event.target.parentElement.id=="colors-list")) {
-                const li=document.createElement("li");
-                const ul=document.getElementById('filter-list');
-                
+
+            } else if(event.target.nodeName=="IMG" && (event.target.parentElement.parentElement.id=="items-list" || event.target.parentElement.parentElement.id=="colors-list")) {
+                $("#filter-list").append("<li class=applied>"+"<img src="+event.target.src+">"+"</li>");
+                $(event.target.parentElement).hide();
             }
         }
+
+        function removeFilter() {
+            
+        }
+
     </script>
 </head>
 <body>
@@ -56,6 +62,10 @@
 
                     </ul>
                 </div>
+
+                <script>
+                    
+                </script>
             </fieldset>
 
             <fieldset>
@@ -74,7 +84,7 @@
             <fieldset>
                 <div class="filter-color">
                     <legend>Color</legend>
-                    <ul id="colors-list">
+                    <ul id="colors-list" name="colors-list">
                         <li id="c1"><img src="img/Roter-punkt.svg"></li>
                         <li id="c2"><img src="img/Blauer-punkt.svg"></li>
                     </ul>
