@@ -16,9 +16,14 @@
         function additemsfilter() {
 
             if(event.target.nodeName=="LI" && (event.target.parentElement.id=="items-list" || event.target.parentElement.id=="colors-list")) {
-                event.target.classList.add("applied");
-                const ul=document.getElementById('filter-list');
-                ul.appendChild(event.target);
+                if(event.target.id.includes('i')){
+                var txt=$(event.target).text();
+                $("#filter-list").append("<li class=applied>"+txt+"</li>");
+                $(event.target).hide();
+                } else {
+                    $("#filter-list").append("<li class=applied>"+"<img src="+event.target.children[0].src+">"+"</li>");
+                    $(event.target).hide(); 
+                }
 
             } else if(event.target.nodeName=="IMG" && (event.target.parentElement.parentElement.id=="items-list" || event.target.parentElement.parentElement.id=="colors-list")) {
                 $("#filter-list").append("<li class=applied>"+"<img src="+event.target.src+">"+"</li>");
