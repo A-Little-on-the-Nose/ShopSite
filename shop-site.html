@@ -31,8 +31,24 @@
             }
         }
 
-        function removeFilter() {
-            
+        function removeFilter(item) {
+            if(item.nodeName=='LI'){
+                if(item.children.length==0) {
+                    let ul=document.getElementById('items-list');
+                    let ogtext=$(item).text();
+                    for(let i=0; i<ul.children.length;i++){
+                        if(ogtext==$(ul.children[i]).text()){
+                            $(ul.children[i]).show();
+                            $(item).remove();
+                            return;
+                        }
+                    }
+                } else {
+
+                }
+            } else {
+
+            }
         }
 
     </script>
@@ -68,11 +84,16 @@
                     </ul>
                 </div>
 
-                <script>
-                    
-                </script>
             </fieldset>
-
+            <script>
+                document.addEventListener('click',e => {
+                    if(event.target.classList.contains('applied')) {
+                        removeFilter(event.target);
+                    } else {
+                        
+                    }
+                })
+            </script>
             <fieldset>
                 <div class="filter-items" id="filter-items">
 
