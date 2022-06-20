@@ -103,7 +103,6 @@
     border-radius: 8px;
 }
 
-.shop-grid p { margin-left: 3px; }
 
 .shop-grid ul { 
     list-style: none; 
@@ -134,7 +133,27 @@
     border-radius: 9px;
 }
 
+.s-item p { 
+    margin-left: 10px; 
+    margin-bottom: 10px;
+}
+
 .s-item button {
     display: block;
 }
 
+.s-item select {
+    margin-left: 10px ;
+    border-radius: 3px;
+}
+
+.s-item button { 
+    background-color: rgb(6, 0, 90) ;
+    color: white;
+    border-radius: 8px;
+    margin-left: 10px;
+    margin-top: 2px;
+    padding :0.4rem 5rem;
+
+    cursor: pointer;
+}
