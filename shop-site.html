@@ -18,37 +18,59 @@
             if(event.target.nodeName=="LI" && (event.target.parentElement.id=="items-list" || event.target.parentElement.id=="colors-list")) {
                 if(event.target.id.includes('i')){
                 var txt=$(event.target).text();
-                $("#filter-list").append("<li class=applied>"+txt+"</li>");
+                $("#filter-list").append("<li class='applied "+event.target.id+"'>"+txt+"</li>");
                 $(event.target).hide();
                 } else {
-                    $("#filter-list").append("<li class=applied>"+"<img src="+event.target.children[0].src+">"+"</li>");
+                    $("#filter-list").append("<li class='applied "+event.target.id+"'>"+"<img src="+event.target.children[0].src+">"+"</li>");
                     $(event.target).hide(); 
                 }
 
             } else if(event.target.nodeName=="IMG" && (event.target.parentElement.parentElement.id=="items-list" || event.target.parentElement.parentElement.id=="colors-list")) {
-                $("#filter-list").append("<li class=applied>"+"<img src="+event.target.src+">"+"</li>");
+                $("#filter-list").append("<li class='applied "+event.target.parentElement.id+"'>"+"<img src="+event.target.src+">"+"</li>");
                 $(event.target.parentElement).hide();
             }
         }
 
         function removeFilter(item) {
-            if(item.nodeName=='LI'){
+            if(item.nodeName=='LI'){  /* Falls ein Li-Element übergeben wurde, da hier mit Children gearbeitet wird( img wäre das Childelement) */
                 if(item.children.length==0) {
-                    let ul=document.getElementById('items-list');
-                    let ogtext=$(item).text();
-                    for(let i=0; i<ul.children.length;i++){
-                        if(ogtext==$(ul.children[i]).text()){
-                            $(ul.children[i]).show();
-                            $(item).remove();
-                            return;
-                        }
-                    }
-                } else {
+                let ul=document.getElementById('items-list');
+                let ogtext=$(item).text();
 
-                }
+                for(let i=0; i<ul.children.length; i++){
+                     if(ogtext==$(ul.children[i]).text()){
+                        $(ul.children[i]).show();
+                        $(item).remove();
+                        return;
+                    }
+                }   
+
             } else {
+                let ul=document.getElementById('colors-list'); /* Li mit Img müssen anhand ihrer src abgeglichen werden */
+                let ogsrc=item.children[0].src;
+
+                for(let i=0; i<ul.children.length; i++){
+                    if(ogsrc==ul.children[i].children[0].src){
+                        $(ul.children[i]).show();
+                        $(item).remove();
+                        return;
+                    }
+                }
 
             }
+           } else {
+               let ul=document.getElementById('colors-list');
+               let ogsrc=item.src;
+
+               for(let i=0; i<ul.children.length; i++){
+                    if(ogsrc==ul.children[i].children[0].src){
+                        $(ul.children[i]).show();
+                        $(item.parentElement).remove();
+                        return;
+                    }
+                }
+
+           }
         }
 
     </script>
@@ -87,7 +109,7 @@
             </fieldset>
             <script>
                 document.addEventListener('click',e => {
-                    if(event.target.classList.contains('applied')) {
+                    if(event.target.classList.contains('applied') || event.target.parentElement.classList.contains('applied')){
                         removeFilter(event.target);
                     } else {
                         
@@ -113,6 +135,7 @@
                     <ul id="colors-list" name="colors-list">
                         <li id="c1"><img src="img/Roter-punkt.svg"></li>
                         <li id="c2"><img src="img/Blauer-punkt.svg"></li>
+                        <li id="c3"><img src="img/Location_dot_black.svg"></li>
                     </ul>
                 </div>
             </fieldset>
@@ -126,9 +149,63 @@
         <div class="shop-grid">
             <div class="search-result" id="search-result">
                 <ul class="shop-items" id="shop-items">
-                    <li><div class="s-item"><img src="img/black-watch.png"></div></li>
-                    <li><div class="s-item"><img src="img/dark-blue-suit.png"></div></li>
-                    <li><div class="s-item"><img src="img/wine-red-suit.png"></div></li>
+                    <li><div class="s-item">
+                            <img src="img/black-watch.png">
+                            <p>WI&WI<br> Watch-Titanium Black</p>
+                            <p class="price"><strong>$ 320</strong></p>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                            <button>BUY</button>
+                        </div>
+                    </li>
+                    <li><div class="s-item">
+                            <img src="img/dark-blue-suit.png">
+                            <p>SMITHENS<br>Buisiness Suit "The Closer" with Comfort Fit</p>
+                            <p class="price"><strong>$ 1299</strong></p>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                            <button>BUY</button>
+                        </div>
+                    </li>
+                    <li><div class="s-item">
+                            <img src="img/wine-red-suit.png">
+                            <p>DAMNY<br>Gala Rug with Regular Fit</p>
+                            <p class="price"><strong>$ 799</strong></p>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                            <button>BUY</button>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>

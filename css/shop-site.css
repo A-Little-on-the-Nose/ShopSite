@@ -3,6 +3,7 @@
     2. Color-Filter Einstellungen
     3. Akitve Filter Einstellungen
     4. ShopFeld
+    5. Artikelelementgestaltung
 **/
 
 .catalog-main{ display: flow-root; }
@@ -65,9 +66,10 @@
 .filter-color img {
     border-style: solid;
     border-radius: 30px;
-    
     max-width: 20px;
 }
+
+
 
 
 /* 3) Aktive Filter */
@@ -101,21 +103,38 @@
     border-radius: 8px;
 }
 
-.shop-grid ul {
-    list-style: none;
-   
+.shop-grid p { margin-left: 3px; }
+
+.shop-grid ul { 
+    list-style: none; 
+    display: flex; 
+    flex-wrap: wrap; /* hilft ein beim Formen des Layouts */
 }
 
-.shop-grid li {
-    display: inline-block;
-    margin-left: 40px ;
+.shop-grid li { 
+    flex: 1 0 30% ;
+    margin: 6px;
     
 }
 
 .shop-grid img {
     border-radius: 9px;
-
+    border-style: solid;
+    border-width: 1px;
+    margin-left: 92px;
+    margin-top: 8px;
     max-height: 300px;
 }
 
+/* Einstellungeb für die Artikel div-Elemente */
+
+.s-item {
+    padding-bottom: 1rem;
+    background-color: whitesmoke;
+    border-radius: 9px;
+}
+
+.s-item button {
+    display: block;
+}
 
