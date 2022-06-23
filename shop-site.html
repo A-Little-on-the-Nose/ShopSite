@@ -14,20 +14,47 @@
         }
 
         function additemsfilter() {
-
             if(event.target.nodeName=="LI" && (event.target.parentElement.id=="items-list" || event.target.parentElement.id=="colors-list")) {
                 if(event.target.id.includes('i')){
                 var txt=$(event.target).text();
                 $("#filter-list").append("<li class='applied "+event.target.id+"'>"+txt+"</li>");
+                applyfilter(event.target);
                 $(event.target).hide();
                 } else {
                     $("#filter-list").append("<li class='applied "+event.target.id+"'>"+"<img src="+event.target.children[0].src+">"+"</li>");
+                    applyfilter(event.target);
                     $(event.target).hide(); 
                 }
 
             } else if(event.target.nodeName=="IMG" && (event.target.parentElement.parentElement.id=="items-list" || event.target.parentElement.parentElement.id=="colors-list")) {
                 $("#filter-list").append("<li class='applied "+event.target.parentElement.id+"'>"+"<img src="+event.target.src+">"+"</li>");
+                applyfilter(event.target.parentElement);
                 $(event.target.parentElement).hide();
+            }
+        }
+
+        function applyfilter(item) {
+            let ul=document.getElementById('shop-items');
+            for(let i=0; i<ul.children.length; i++){
+                if(item.id.includes('i')){
+                    if(!$(ul.children[i]).hasClass('visible1')){
+                        if($(ul.children[i].children[0]).hasClass(item.id)){
+                            $(ul.children[i]).addClass('visible1');
+                            $(ul.children[i]).show();
+                        } else { /* Es soll das Item trotzdem noch angezeigt werden, dass bereits vorher gefiltered wurde und nur zu dem neuen Filter nicht passt! */
+                            $(ul.children[i]).hide();
+                        }
+                    }    
+                } else {
+                    if($(ul.children[i].children[0]).hasClass(item.id)){ /* Stellt sicher, dass nur Elemente mit dieser Farbkombi angezeigt werden */
+                        $(ul.children[i]).addClass('visible2');
+                        $(ul.children[i]).show();
+                    } else {
+                        if(!$(ul.children[i]).hasClass('visible2')){
+                            $(ul.children[i]).hide();
+                        } 
+                    }
+                }
             }
         }
 
@@ -44,7 +71,6 @@
                         return;
                     }
                 }   
-
             } else {
                 let ul=document.getElementById('colors-list'); /* Li mit Img müssen anhand ihrer src abgeglichen werden */
                 let ogsrc=item.children[0].src;
@@ -56,7 +82,6 @@
                         return;
                     }
                 }
-
             }
            } else {
                let ul=document.getElementById('colors-list');
@@ -69,7 +94,6 @@
                         return;
                     }
                 }
-
            }
         }
 
@@ -149,7 +173,7 @@
         <div class="shop-grid">
             <div class="search-result" id="search-result">
                 <ul class="shop-items" id="shop-items">
-                    <li><div class="s-item">
+                    <li><div class="s-item c3 i2">
                             <img src="img/black-watch.png">
                             <p>WI&WI<br> Watch-Titanium Black</p>
                             <p class="price"><strong>$ 320</strong></p>
@@ -168,7 +192,7 @@
                             <button>BUY</button>
                         </div>
                     </li>
-                    <li><div class="s-item">
+                    <li><div class="s-item c2 i1">
                             <img src="img/dark-blue-suit.png">
                             <p>SMITHENS<br>Buisiness Suit "The Closer" with Comfort Fit</p>
                             <p class="price"><strong>$ 1299</strong></p>
@@ -187,7 +211,7 @@
                             <button>BUY</button>
                         </div>
                     </li>
-                    <li><div class="s-item">
+                    <li><div class="s-item c1 i1">
                             <img src="img/wine-red-suit.png">
                             <p>DAMNY<br>Gala Rug with Regular Fit</p>
                             <p class="price"><strong>$ 799</strong></p>
