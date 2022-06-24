@@ -9,6 +9,11 @@
 
     <script src="jQuery/jquery-3.6.0.js" type="text/javascript"></script>
     <script>
+
+        const colorarr=[];
+        const itemarr=[];
+
+
         function dropit() {
             this.classList.toggle('showmenu');
         }
@@ -18,45 +23,84 @@
                 if(event.target.id.includes('i')){
                 var txt=$(event.target).text();
                 $("#filter-list").append("<li class='applied "+event.target.id+"'>"+txt+"</li>");
-                applyfilter(event.target);
+                activateitemfilter(event.target);
                 $(event.target).hide();
                 } else {
                     $("#filter-list").append("<li class='applied "+event.target.id+"'>"+"<img src="+event.target.children[0].src+">"+"</li>");
-                    applyfilter(event.target);
+                    activatecolorfilter(event.target);
                     $(event.target).hide(); 
                 }
 
             } else if(event.target.nodeName=="IMG" && (event.target.parentElement.parentElement.id=="items-list" || event.target.parentElement.parentElement.id=="colors-list")) {
                 $("#filter-list").append("<li class='applied "+event.target.parentElement.id+"'>"+"<img src="+event.target.src+">"+"</li>");
-                applyfilter(event.target.parentElement);
+                activatecolorfilter(event.target.parentElement);
                 $(event.target.parentElement).hide();
             }
         }
 
-        function applyfilter(item) {
+        function activateitemfilter(item) {
             let ul=document.getElementById('shop-items');
-            for(let i=0; i<ul.children.length; i++){
-                if(item.id.includes('i')){
-                    if(!$(ul.children[i]).hasClass('visible1')){
-                        if($(ul.children[i].children[0]).hasClass(item.id)){
-                            $(ul.children[i]).addClass('visible1');
+            itemarr.push(item.id);
+            if(colorarr.length==0){
+                for(let i=0; i<ul.children.length; i++){
+                    for(let j=0; j<itemarr.length; j++){
+                        if($(ul.children[i].children[0]).hasClass(itemarr[j])){
                             $(ul.children[i]).show();
-                        } else { /* Es soll das Item trotzdem noch angezeigt werden, dass bereits vorher gefiltered wurde und nur zu dem neuen Filter nicht passt! */
+                            break;
+                        } else {
                             $(ul.children[i]).hide();
                         }
-                    }    
-                } else {
-                    if($(ul.children[i].children[0]).hasClass(item.id)){ /* Stellt sicher, dass nur Elemente mit dieser Farbkombi angezeigt werden */
-                        $(ul.children[i]).addClass('visible2');
-                        $(ul.children[i]).show();
-                    } else {
-                        if(!$(ul.children[i]).hasClass('visible2')){
-                            $(ul.children[i]).hide();
-                        } 
+                    }   
+                }
+            } else {
+                for(let i=0; i<ul.children.length; i++){
+                    for(let j=0; j<colorarr.length; j++){
+                        if($(ul.children[i].children[0]).hasClass(colorarr[j])){
+                            for(let k=0; k<itemarr.length;k++){
+                                if($(ul.children[i].children[0]).hasClass(itemarr[k])){
+                                    $(ul.children[i]).show();
+                                    break;
+                                } else {
+                                    $(ul.children[i]).hide();
+                                }
+                            } 
+                        }
                     }
                 }
             }
         }
+
+        function activatecolorfilter(item){
+            let ul=document.getElementById('shop-items');
+            colorarr.push(item.id);
+            if(itemarr.length==0){
+                for(let i=0; i<ul.children.length; i++){
+                    for(let j=0; j<colorarr.length; j++){
+                        if($(ul.children[i].children[0]).hasClass(colorarr[j])){
+                            $(ul.children[i]).show();
+                            break;
+                        } else {
+                            $(ul.children[i]).hide();
+                        }
+                    }
+                }
+            } else {
+                for(let i=0; i<ul.children.length; i++){
+                    for(let j=0; j<itemarr.length; j++){
+                        if($(ul.children[i].children[0]).hasClass(itemarr[j])){
+                            for(let k=0; k<colorarr.length;k++){
+                                if($(ul.children[i].children[0]).hasClass(colorarr[k])){
+                                    $(ul.children[i]).show();
+                                    break;
+                                } else {
+                                    $(ul.children[i]).hide();
+                                }
+                            } 
+                        }   
+                    }
+                }
+            }
+        }    
 
         function removeFilter(item) {
             if(item.nodeName=='LI'){  /* Falls ein Li-Element übergeben wurde, da hier mit Children gearbeitet wird( img wäre das Childelement) */
