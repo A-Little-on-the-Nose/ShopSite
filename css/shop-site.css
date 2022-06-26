@@ -15,7 +15,7 @@
     float: left;
     margin-bottom: 10px;
     padding: 1rem;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .filter-sidebar ul {
@@ -43,15 +43,23 @@
 
 .filter-sidebar fieldset {
     padding: 0;
-    border-radius: 5px;
+    border-radius: 8px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: black;
 }
+
+fieldset:not(:first-child) {
+    border-top: 0;
+}
+
+
 
 .filter-sidebar legend {
     color: white;
     background-color: rgb(6, 0, 90);
     padding-right: 2rem;
     padding-left: 2rem;
-
 
     border-radius: 2px;
 }
@@ -89,17 +97,15 @@
     border-style: none !important;
     text-align: right;
     padding-left: 20px;
-
 }
 
 
 /* 4) Shopfeld */
 
 .shop-grid {
-    background-color: gray;
-    margin-left: 7rem;
-    margin-right: 5rem;
+    background-color: rgb(226, 226, 226);
     padding: 2rem;
+    padding-bottom: 19.5rem;
     border-radius: 8px;
 }
 
@@ -111,7 +117,7 @@
 }
 
 .shop-grid li { 
-    flex: 1 0 30% ;
+    flex: 1 0.5 20% ;
     margin: 6px;
     
 }
@@ -120,8 +126,9 @@
     border-radius: 9px;
     border-style: solid;
     border-width: 1px;
-    margin-left: 92px;
     margin-top: 8px;
+    margin-left: 60px;
+    margin-bottom: 2px;
     max-height: 300px;
 }
 
@@ -129,7 +136,6 @@
 
 .s-item {
     padding-bottom: 1rem;
-    background-color: whitesmoke;
     border-radius: 9px;
 }
 
