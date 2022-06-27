@@ -1,18 +1,17 @@
 
 .impressum-main {
-    background-color: white;
     padding: 1rem;
-
+    background-color: white;
 }
 
 .datenschutz-main {
-    background-color: white;
     padding: 1rem;
+    background-color: white;
 }
 
 .datenschutz-main a {
-    text-decoration: underline;
     color: blue;
+    text-decoration: underline;
 }
 
 @media screen and (min-width: 600px) {

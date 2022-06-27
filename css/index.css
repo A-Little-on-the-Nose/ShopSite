@@ -25,9 +25,9 @@
 
 .suit-section-img img {
     display: block;
-    max-width: 300px;
+    margin: 0 auto ;/* Zentriert das Bild */
     border-radius: 15px;
-    margin: 0 auto /* Zentriert das Bild */
+    max-width: 300px;
 }
 
 .section-watches {
@@ -54,9 +54,9 @@
     
 .watch-section-img img {
     display: block;
-    max-width: 300px;
+    margin: 0 auto ;/* Zentriert das Bild */
     border-radius: 15px;
-    margin: 0 auto /* Zentriert das Bild */
+    max-width: 300px;
 }
 
 
@@ -64,9 +64,7 @@
 
 @media screen and (max-width: 400px) {
 
-    .suit-section-img, .watch-section-img {
-       margin-left: 5.6%;
-    }
+    .suit-section-img, .watch-section-img { margin-left: 5.6%;}
   
 }
 
@@ -110,13 +108,11 @@
 
     .suit-section-img img {
         display: flex;
-        float: right;
-        max-width: 400px;
         margin-left: 0;
         margin-right: 0;
+        float: right;
+        max-width: 400px;
     }
-
-
 
     .section-watches {
         margin: 0rem 6rem;
