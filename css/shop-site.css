@@ -117,35 +117,33 @@ fieldset:not(:first-child) {
 }
 
 .shop-grid li { 
-    flex: 1 0.5 20% ;
-    margin: 6px;
+    flex: 1 0 20% ;
+    margin-top: 10px;
     
 }
 
 .shop-grid img {
+    
     border-radius: 9px;
     border-style: solid;
     border-width: 1px;
     margin-top: 8px;
-    margin-left: 60px;
+    margin-left: 37px;
     margin-bottom: 2px;
-    max-height: 300px;
+    max-height: 150px;
 }
 
 /* Einstellungeb für die Artikel div-Elemente */
 
-.s-item {
+.s-item :not(p , select) {
     padding-bottom: 1rem;
     border-radius: 9px;
+    text-align: center;
 }
 
 .s-item p { 
     margin-left: 10px; 
     margin-bottom: 10px;
-}
-
-.s-item button {
-    display: block;
 }
 
 .s-item select {
@@ -154,12 +152,55 @@ fieldset:not(:first-child) {
 }
 
 .s-item button { 
+    display: block;
     background-color: rgb(6, 0, 90) ;
     color: white;
     border-radius: 8px;
     margin-left: 10px;
     margin-top: 2px;
-    padding :0.4rem 5rem;
+    padding : 0.4rem 3rem;
 
     cursor: pointer;
+}
+
+
+@media screen and (min-width: 400px) {
+
+    .shop-grid img { max-height: 200px;}
+
+    .s-item button { padding : 0.4rem 5rem;}
+}
+
+
+@media screen and (min-width: 720px) {
+    
+    .shop-grid li { 
+        flex: 1 0 20% ;
+        margin-top: 10px;
+    }
+
+    .shop-grid img {
+        max-height: 300px;
+    }
+
+    .s-item span {
+        white-space: nowrap;
+    }
+
+    .s-item button { padding : 0.4rem 5rem;}
+}
+
+
+@media screen and (min-width: 900px) {
+    
+    .shop-grid li { 
+        flex: 1 0 20% ;
+        margin-top: 10px;
+    }
+
+    .shop-grid img { max-height: 300px;}
+
+    .s-item span { white-space: nowrap;}
+
+    .s-item button { padding : 0.4rem 5rem;}
 }
