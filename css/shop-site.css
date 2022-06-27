@@ -11,29 +11,28 @@
 /* 1) Sidebar */
 
 .filter-sidebar {
-    background-color: white;
-    float: left;
     margin-bottom: 10px;
     padding: 1rem;
     border-radius: 10px;
+    background-color: white;
+    float: left;
 }
 
 .filter-sidebar ul {
     list-style: none;
-    padding-left: 0;
     padding-top: 5px;
+    padding-left: 0;
 }
 
 .filter-sidebar li {
-    border-style: solid;
-    border-radius: 15px;
-    border-width: 1px;
-
-    padding-bottom: 5px;
     padding-top: 5px;
+    padding-bottom: 5px;
     padding-left: 5px;
     padding-right: 10px;
     margin-bottom: 2px;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 1px;
 }
 
 .filter-sidebar li:hover {
@@ -43,33 +42,26 @@
 
 .filter-sidebar fieldset {
     padding: 0;
+    border-style: solid;
     border-radius: 8px;
     border-width: 4px;
-    border-style: solid;
     border-color: black;
 }
 
-fieldset:not(:first-child) {
-    border-top: 0;
-}
-
-
+fieldset:not(:first-child) { border-top: 0;}
 
 .filter-sidebar legend {
-    color: white;
-    background-color: rgb(6, 0, 90);
-    padding-right: 2rem;
     padding-left: 2rem;
-
+    padding-right: 2rem;
     border-radius: 2px;
+    background-color: rgb(6, 0, 90);
+    color: white;
 }
 
 
 /* 2) Color-filter */
 
-.filter-color li {
-    border-style: none;
-}
+.filter-color li { border-style: none;}
 
 .filter-color img {
     border-style: solid;
@@ -85,51 +77,48 @@ fieldset:not(:first-child) {
  .filtered img {
     border-style: solid;
     border-radius: 30px;
-        
     max-width: 20px;
 }
 
 .filtered li {
+    padding-left: 20px;
+    border-style: none !important;
     background-image: url('../img/x-symbol-svgrepo-com.svg');
     background-position: 1rem;
     background-repeat: no-repeat;
     background-size: 10px;
-    border-style: none !important;
     text-align: right;
-    padding-left: 20px;
 }
 
 
 /* 4) Shopfeld */
 
 .shop-grid {
-    background-color: rgb(226, 226, 226);
     padding: 2rem;
     padding-bottom: 19.5rem;
     border-radius: 8px;
+    background-color: rgb(226, 226, 226);
 }
 
 
 .shop-grid ul { 
-    list-style: none; 
     display: flex; 
+    list-style: none; 
     flex-wrap: wrap; /* hilft ein beim Formen des Layouts */
 }
 
 .shop-grid li { 
-    flex: 1 0 20% ;
     margin-top: 10px;
-    
+    flex: 1 0 20% ;
 }
 
 .shop-grid img {
-    
-    border-radius: 9px;
-    border-style: solid;
-    border-width: 1px;
     margin-top: 8px;
-    margin-left: 37px;
     margin-bottom: 2px;
+    margin-left: 37px;
+    border-style: solid;
+    border-radius: 9px;
+    border-width: 1px;
     max-height: 150px;
 }
 
@@ -153,13 +142,12 @@ fieldset:not(:first-child) {
 
 .s-item button { 
     display: block;
+    padding : 0.4rem 3rem;
+    border-radius: 8px;
+    margin-top: 2px;
+    margin-left: 10px;
     background-color: rgb(6, 0, 90) ;
     color: white;
-    border-radius: 8px;
-    margin-left: 10px;
-    margin-top: 2px;
-    padding : 0.4rem 3rem;
-
     cursor: pointer;
 }
 
@@ -179,13 +167,9 @@ fieldset:not(:first-child) {
         margin-top: 10px;
     }
 
-    .shop-grid img {
-        max-height: 300px;
-    }
+    .shop-grid img { max-height: 300px;}
 
-    .s-item span {
-        white-space: nowrap;
-    }
+    .s-item span { white-space: nowrap;}
 
     .s-item button { padding : 0.4rem 5rem;}
 }
