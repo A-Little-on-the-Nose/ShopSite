@@ -13,7 +13,6 @@
         let colorarr=[];
         let itemarr=[];
 
-
         function dropit() {
             this.classList.toggle('showmenu');
         }
@@ -284,7 +283,7 @@
                 <div class="filtered" id="filtered">
 
                     <legend>Filter</legend>
-                    <ul id="filter-list">
+                    <ul class="filter-list" id="filter-list">
 
                     </ul>
                 </div>
@@ -292,9 +291,9 @@
             </fieldset>
             <script>
                 document.addEventListener('click',e => {
-                    if(event.target.classList.contains('applied') || event.target.parentElement.classList.contains('applied')){
+                    if(($(event.target.parentElement).hasClass('filter-list') || $(event.target.parentElement.parentElement).hasClass('filter-list') )  && (event.target.classList.contains('applied') || event.target.parentElement.classList.contains('applied'))){
                         removeFilter(event.target);
-                    } else {
+                    } else if($(event.target.parentElement).hasClass('colors-list') || $(event.target.parentElement.parentElement).hasClass('colors-list') || $(event.target.parentElement).hasClass('items-list') || $(event.target.parentElement.parentElement).hasClass('items-list')) {
                         additemsfilter(event.target);
                     }
                 })
@@ -303,7 +302,7 @@
                 <div class="filter-items" id="filter-items">
 
                     <legend>Items</legend>
-                    <ul id="items-list" name="items-list">
+                    <ul class="items-list" id="items-list" name="items-list">
                         <li id="i1">Suits</li>
                         <li id="i2">Watches</li>
                     </ul>
@@ -315,7 +314,7 @@
             <fieldset>
                 <div class="filter-color">
                     <legend>Color</legend>
-                    <ul id="colors-list" name="colors-list">
+                    <ul class="colors-list" id="colors-list" name="colors-list">
                         <li id="c1"><img src="img/Roter-punkt.svg"></li>
                         <li id="c2"><img src="img/Blauer-punkt.svg"></li>
                         <li id="c3"><img src="img/Location_dot_black.svg"></li>
